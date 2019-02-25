@@ -1,0 +1,45 @@
+name: Objects
+description: Manipulate object data
+sid: objects
+tasks:
+  select:
+    description: partially select some fields from object or array of objects
+    inputs:
+      source:
+        description: source data can be object or array of objects
+        type: Any
+      fields:
+        description: field key patterns to match with field keys of objects
+        type: String
+        repeated: true
+      flatten:
+        description: flatten fields from child object to root object
+        type: Boolean
+        optional: true
+    outputs:
+      success:
+        data:
+          data:
+            description: New object or array of objects from selected fields
+            type: Any
+      failure:
+        data:
+          message:
+            type: String
+  merge:
+    description: merge multiple objects into one
+    inputs:
+      sources:
+        description: Array of objects
+        type: Object
+        repeated: true
+    outputs:
+      success:
+        data:
+          data:
+            description: Merged object data
+            type: Object
+      failure:
+        data:
+          message:
+            type: String
