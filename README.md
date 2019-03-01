@@ -10,6 +10,7 @@ Manipulate object data
   - [Tasks](#Tasks)
     - [merge](#merge)
     - [select](#select)
+    - [value](#value)
 
 # Installation
 
@@ -105,5 +106,42 @@ Output key: `success`
 | **Name** | **Key** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | **data** | `data` | `Any` | New object or array of objects from selected fields |
+
+
+## value
+
+Task key: `value`
+
+Get value of matching object's requested field
+
+### Inputs
+
+| **Name** | **Key** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| **from** | `from` | `String` | Field to get its value from the matching object |
+| **match** | `match` | `Object` | Matching filter object fields |
+| **sources** | `sources` | `Object` | Array of objects |
+
+### Outputs
+
+#### failure
+
+Output key: `failure`
+
+
+
+| **Name** | **Key** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| **message** | `message` | `String` |  |
+
+#### success
+
+Output key: `success`
+
+
+
+| **Name** | **Key** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| **data** | `data` | `Any` | Value of matching object's requested field |
 
 

@@ -43,3 +43,34 @@ tasks:
         data:
           message:
             type: String
+  value:
+    description: Get value of matching object's requested field
+    inputs:
+      sources:
+        description: Array of objects
+        type: Object
+        repeated: true
+      match:
+        description: Matching filter object fields
+        type: Object
+        object:
+          field:
+            description: Field to do comparison on
+            type: String
+          equal:
+            description: Equality check for the comparison field's value
+            type: String
+            optional: true
+      from:
+        description: Field to get its value from the matching object
+        type: String
+    outputs:
+      success:
+        data:
+          data:
+            description: Value of matching object's requested field
+            type: Any
+      failure:
+        data:
+          message:
+            type: String
