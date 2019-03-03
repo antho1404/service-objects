@@ -112,14 +112,14 @@ Output key: `success`
 
 Task key: `value`
 
-Get value of matching object's requested field
+Get named values from requested fields of matching objects
 
 ### Inputs
 
 | **Name** | **Key** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | **from** | `from` | `String` | Field to get its value from the matching object |
-| **match** | `match` | `Object` | Matching filter object fields |
+| **match** | `match` | `Object` | Filter to match with object fields |
 | **sources** | `sources` | `Object` | Array of objects |
 
 ### Outputs
@@ -142,6 +142,6 @@ Output key: `success`
 
 | **Name** | **Key** | **Type** | **Description** |
 | --- | --- | --- | --- |
-| **data** | `data` | `Any` | Value of matching object's requested field |
+| **data** | `data` | `Any` | Named values that built from requested fields of matching objects |
 
 

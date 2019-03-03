@@ -44,22 +44,26 @@ tasks:
           message:
             type: String
   value:
-    description: Get value of matching object's requested field
+    description: Get named values from requested fields of matching objects
     inputs:
       sources:
         description: Array of objects
         type: Object
         repeated: true
       match:
-        description: Matching filter object fields
+        description: Filter to match with object fields
         type: Object
         object:
           field:
-            description: Field to do comparison on
+            description: Field to select and perform comparison on
             type: String
           equal:
             description: Equality check for the comparison field's value
             type: String
+            optional: true
+          any:
+            description: Select field without doing any comparison
+            type: Boolean
             optional: true
       from:
         description: Field to get its value from the matching object
@@ -68,7 +72,7 @@ tasks:
       success:
         data:
           data:
-            description: Value of matching object's requested field
+            description: Named values that built from requested fields of matching objects
             type: Any
       failure:
         data:

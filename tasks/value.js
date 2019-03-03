@@ -1,15 +1,13 @@
-module.exports = ({ sources, match, from }, { success, failure }) => {
-  const { field, equal } = match
+module.exports = ({ sources, match, from }, { success }) => {
+  const { field, equal, any } = match
+  let data = { }
 
-  const source = sources.find((source) => {
-    if (equal) {
-      return source[field] === equal
+  sources.forEach((source) => {
+    if (any ||
+        (equal && source[field] === equal)) {
+      data[source[field]] = source[from]
     }
-    return false
   })
 
-  if (source) {
-    return success({ data: source[from] })
-  }
-  return failure({ message: 'no match' })
+  return success({ data })
 }
