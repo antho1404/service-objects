@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@liteflow/service": "^1.0.7",
     "dot-object": "^1.7.1",
-    "mesg-js": "^2.0.1",
     "minimatch": "^3.0.4"
   }
 }
